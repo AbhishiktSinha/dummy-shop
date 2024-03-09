@@ -1,0 +1,27 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+  padding-inline: 4px;
+}
+
+.rating-star.material-symbols-outlined, .rating-star.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1  
+}
+
+
