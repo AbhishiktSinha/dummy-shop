@@ -7,7 +7,7 @@ import '../styles/ProductCard.css'
 
 import { useSelector } from 'react-redux';
 
-function ProductCard({product}) {
+function ProductCard({product, clickRedirectHandler}) {
 
     let {id, title, price, discountPercentage, thumbnail, rating} = product;
     // TODO: add cart state dependency
@@ -23,13 +23,19 @@ function ProductCard({product}) {
         else return 0;
     });    
 
-    console.log(title,'COUNT', count);
-    
+    function onClickHandler() {
+        clickRedirectHandler(id);
+    }
+
+    console.log(title,'COUNT', count);    
 
     // console.log('rendered:', title);
 
     return (
-        <div className="card-container">
+        <div
+            onClick={onClickHandler} 
+            className="card-container">
+            
             <div className="thumbnail-image-container">
                 <img src={thumbnail} alt={title} />
             </div>

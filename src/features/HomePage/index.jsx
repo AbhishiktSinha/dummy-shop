@@ -1,5 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 import ProductCard from './components/ProductCard.jsx';
 import Navbar from '../../components/Navbar.jsx'
 import SearchBar from '../../components/SearchBar.jsx'
@@ -24,6 +26,13 @@ export default function HomePage() {
     const[displayedData, setDisplayedData] = useState(()=>{
         return filterData(data, query)
     })
+
+    const navigate = useNavigate();
+
+    function clickRedirectHandler(productId) {
+        navigate(`../products/${productId}`)
+    }
+        
 
     const dispatch = useDispatch();
     
@@ -97,7 +106,8 @@ export default function HomePage() {
                             return (
                                 <ProductCard 
                                     key={item.title}
-                                    product={item}                                    
+                                    product={item}  
+                                    clickRedirectHandler={clickRedirectHandler}                                  
                                 />
                             )
                         })

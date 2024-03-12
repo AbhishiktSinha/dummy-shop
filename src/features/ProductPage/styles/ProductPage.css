@@ -1,0 +1,127 @@
+.product-page-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .navbar-container {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        column-gap: 14px;
+
+        width: 100% !important;
+
+        padding-block: 10px;
+
+        position: sticky;
+        top: 0;
+        z-index: 500;
+
+        background-color: #ffffff;
+
+        .logo-container {
+            text-transform: capitalize;
+            font-style: oblique;
+
+            font-size: 24px;
+
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+            color: #006000;
+        }
+
+        .go-home {
+            border: 2px solid #006600;
+            color: #006600;
+
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .navbar-right-container {
+            display: flex;
+            column-gap: 14px;
+
+            align-items: center;
+
+
+            .open-cart-button {
+
+                background-color: #006000;
+                color: #ffffff;
+
+                padding-inline: 8px;
+                padding-block: 4px;
+
+                border: 1px solid #dddddd;
+
+                border-radius: 8px;
+                display: flex;
+                column-gap: 5px;
+
+                >div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    row-gap: 2px;
+
+                }
+            }
+
+            .open-wishlist-button-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                position: relative;
+
+                width: 40px;
+                height: 40px;
+
+                border-radius: 50%;
+                min-width: 40px;
+                min-height: 40px;
+
+                background-color: transparent;
+
+                >span {
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+
+                    border-radius: 50%;
+                    /* background-color: #ebdbdb; */
+
+                    color: #f63636;
+                    font-weight: 800;
+
+                    position: absolute;
+                    top: -1px;
+                    right: -1px;
+                }
+            }
+
+            .open-wishlist-button-container:hover {
+                background-color: #e8e8e8b0;
+            }
+        }
+    }
+
+    .main-product-container {
+        width: 480px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        align-items: center;
+    }
+}
