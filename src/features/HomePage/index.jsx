@@ -36,9 +36,9 @@ export default function HomePage() {
 
     const dispatch = useDispatch();
     
-    /* useEffect(()=>{
+    useEffect(()=>{
         onScrollLoad = debouncer(()=>{
-            console.log('SCROLLING with query:', query,'and data:', data);
+            console.log('SCROLLING with query:', query,'and data members:', data.length);
             if (query == '') {
                 
                 const scrolled = window.document.documentElement.scrollTop;
@@ -47,7 +47,7 @@ export default function HomePage() {
                 const remaining = scrollHeight - clientHeight - scrolled;
 
                 console.log('remaining:',remaining,', scrolled:', scrolled);
-                if (remaining <= 550) {
+                if (remaining <= 550 && data.length < 100) {
                     loadMoreProducts();
                 }
 
@@ -55,8 +55,8 @@ export default function HomePage() {
 
         }, 300)
 
-        // window.onscroll = onScrollLoad;
-    }, []) */
+        window.onscroll = onScrollLoad;
+    }, [data, query])
 
     useEffect(()=>{
         dispatch({
@@ -121,7 +121,7 @@ export default function HomePage() {
             }
             {/* give option to load more products only when more products are available on the backend, check limi
             and no search query has been entered */}
-            {
+            {/* {
                 !loading && data.length < 100 && query == '' && (
 
 
@@ -131,7 +131,7 @@ export default function HomePage() {
                     </div>
                         
                 )
-            }
+            } */}
         </div>
     )
 }

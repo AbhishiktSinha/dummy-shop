@@ -4,7 +4,7 @@ export default function ProductRating({rating}) {
     const fullStarCount = Math.floor(Number(rating) / 1);
     const isHalfStar = (Number(rating) % 1) > 0.5;
 
-    console.log('full stars:', fullStarCount)
+    // console.log('full stars:', fullStarCount)
 
     const starsList = [];
     for (let i = 0; i < fullStarCount; i++) {

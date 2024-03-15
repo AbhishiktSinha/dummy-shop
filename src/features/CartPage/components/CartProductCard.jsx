@@ -2,7 +2,7 @@ import AddToCartButton from '../../../components/AddToCartButton';
 import '../styles/CartProductCard.css';
 import ToggleWishlistButton from '../../../components/ToggleWishlistButton';
 
-export default function CartProductCard({cartProduct}) {
+export default function CartProductCard({cartProduct, clickRedirectHandler}) {
 
     console.log('cart product:', cartProduct);
     
@@ -17,7 +17,9 @@ export default function CartProductCard({cartProduct}) {
     const displayTitle = title.length <= 18 ? title : title.slice(0, 15) + "...";
 
     return (
-        <div className="cart-card-container">
+        <div className="cart-card-container" onClick={()=>{
+            clickRedirectHandler(id);
+        }}>
             <div className="thumbnail-image-container">
                 <img src={thumbnail} alt={title} />
             </div>

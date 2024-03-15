@@ -36,7 +36,11 @@ export default function CartPage() {
 
         setCost(totalCost.toFixed(0));
 
-    }, [cart]);
+    }, [cart]);    
+
+    function clickRedirectHandler(productId) {
+        navigate(`../products/${productId}`)
+    }
 
     return (
         <div id="cart-main">
@@ -66,7 +70,11 @@ export default function CartPage() {
                             cartProductKeys.map( key => {
                                 const item = cart[key];
                                 return (
-                                    <CartProductCard key={item.details.title} cartProduct={item}/>
+                                    <CartProductCard 
+                                        key={item.details.title} 
+                                        cartProduct={item}
+                                        clickRedirectHandler={clickRedirectHandler}
+                                        />
                                 )
                             })
                         )

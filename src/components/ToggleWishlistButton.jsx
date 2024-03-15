@@ -8,7 +8,7 @@ export default function ToggleWishlistButton({productId, productDetails}) {
     const dispatch = useDispatch();
     const isWishListed = useSelector(state => Boolean(state.wishlist[productId]));
 
-    console.log(productId,'is wishlisted?', isWishListed);
+    // console.log(productId,'is wishlisted?', isWishListed);
 
     function clickHanlder(e) {
         e.stopPropagation();

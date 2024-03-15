@@ -37,7 +37,7 @@ export default function ProductPage() {
                 
                 <button 
                     onClick={()=>{
-                        navigate('../../home')
+                        navigate(-1)
                     }}
                     className="go-home">
                         Go back
